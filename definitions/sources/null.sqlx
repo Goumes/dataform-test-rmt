@@ -1,6 +1,0 @@
-config {
-  type: "declaration",
-  database: "askasks-poc-raw",
-  schema: "ds_poc_oracle",
-  name: "null"
-}
