@@ -1,0 +1,33 @@
+config {
+  type: "incremental",
+  database: "askasks-poc-master",
+  schema: "{{dataset}}",
+  bigquery: {
+    partitionBy: "ARQPIB_FEC_PART"
+  },
+  tags: ["ingestion_tables_config"],
+  dependencies: ["oehr_customers_alter_table"]
+}
+
+pre_operations {
+  DECLARE fecha_dato_checkpoint DEFAULT (
+    ${when(incremental(),
+      `SELECT IFNULL(MAX(ARQPIB_FEC_PART), DATE("1999-12-31")) FROM ${self()}`,
+      `SELECT DATE("1999-12-31")`)}
+  );
+  
+  ${when(incremental(),
+    `-- Handle if the Dataform is called several times during the same day
+    IF (fecha_dato_checkpoint = (SELECT CURRENT_DATE() - 1)) THEN
+      DELETE FROM ${self()}
+        WHERE ARQPIB_FEC_PART = fecha_dato_checkpoint;
+      SET fecha_dato_checkpoint = (SELECT IFNULL(MAX(ARQPIB_FEC_PART), DATE("1999-12-31")) FROM ${self()});
+    END IF`)}
+}
+
+SELECT
+  *
+FROM
+  ${ref({ database: "askasks-poc-raw", schema: "{{dataset}}", name: "{{table_name}}" })}
+WHERE
+  ARQPIB_FEC_PART > fecha_dato_checkpoint
