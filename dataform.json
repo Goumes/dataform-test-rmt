@@ -1,6 +1,6 @@
 {
   "defaultDatabase": "askasks-poc-raw",
-  "defaultSchema": "{{dataset}}",
+  "defaultSchema": "ds_poc_oracle",
   "warehouse": "bigquery",
   "defaultLocation": "EU"
 }
