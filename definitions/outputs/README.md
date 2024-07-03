@@ -1,5 +1,5 @@
 # Outputs
 
-Definitions of tables consumed by processes or tools, such as BI, after Dataform executes them in BigQuery.
+Definiciones de tablas que consumen los procesos o herramientas, como la IE, después de que Dataform las ejecuta en BigQuery. 
 
-Best practices for outputs: https://cloud.google.com/dataform/docs/structure-repositories#best_practices_for_outputs
+Mejores prácticas para outputs: https://cloud.google.com/dataform/docs/structure-repositories#best_practices_for_outputs

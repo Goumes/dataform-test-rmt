@@ -1,3 +1,3 @@
 # Extra
 
-Files outside of the main pipeline of your SQL workflow, for example, files that contain workflow data prepared for additional use, like machine learning. An optional and custom subdirectory.
+Archivos fuera de la canalización principal del flujo de trabajo de SQL, por ejemplo, archivos que contienen datos de flujo de trabajo preparados para su uso adicional, como aprendizaje automático. Un subdirectorio opcional y personalizado.

@@ -1,5 +1,5 @@
 {
-    "name": "raw-curated-transformations",
+    "name": "raw-master-transformations",
     "dependencies": {
         "@dataform/core": "2.8.3"
     }

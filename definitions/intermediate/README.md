@@ -1,5 +1,5 @@
 # Intermediate
 
-Tables and actions that read from *sources* and transform data before you use the transformed data to define *outputs* tables. Tables typically not exposed to additional processes or tools, such as business intelligence (BI) tools, after Dataform executes them to BigQuery.
+Tablas y acciones que leen desde sources y transforman datos antes de usar los datos transformados para definir tablas outputs. Por lo general, las tablas no están expuestas a procesos o herramientas adicionales, como las herramientas de inteligencia empresarial (IE), después de que Dataform las ejecuta en BigQuery.
 
-Best practices for intermediate: https://cloud.google.com/dataform/docs/structure-repositories#best_practices_for_intermediate
+Mejores prácticas para intermediate: https://cloud.google.com/dataform/docs/structure-repositories#best_practices_for_intermediate
